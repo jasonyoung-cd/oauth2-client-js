@@ -12,9 +12,9 @@ import {assertPresent} from './util';
 class OAuthResponse {
     constructor(response) {
         this.response = response;
-        assertPresent(response, ['access_token', 'token_type']);
+        assertPresent(response, ['id_token', 'token_type']);
 
-        this.access_token = response.access_token;
+        this.access_token = response.id_token;
         this.token_type = response.token_type;
         this.refresh_token = response.refresh_token || null;
         this.expires_in = response.expires_in ? parseInt(response.expires_in) : null;
